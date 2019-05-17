@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  follower: sagar
+  following: shikhar
+
+two:
+  follower: sagar
+  following: ram
+
+three: 
+  follower: shikhar
+  following: sagar
+
+four: 
+  follower: ram
+  following: sagar

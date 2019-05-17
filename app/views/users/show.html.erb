@@ -1,0 +1,34 @@
+<div class="row">
+	<aside class="col-md-4">
+		<section class="user_info">
+			<h1>
+			<%= gravatar_for @user, size: 50%>
+			<%= @user.name %>
+		</h1>
+		</section>
+		<section>
+			<%= render 'shared/stats' %>
+		</section>
+	</aside>
+</div>
+
+<div class="jumbotron">
+	<p>The user details are here:</p>
+
+	<%= @user.name %>
+	<%= @user.email %>
+
+	<p>This page was last refreshed at: </p>
+	<%= Time.now %>
+</div>
+
+<div class="col-md-8 jumbotron">
+	<%= render 'shared/follow_form' if logged_in? %>
+	<% if @user.microposts.any? %>
+		<h3>Microposts (<%= @user.microposts.count %>)</h3>
+		<ol class="microposts">
+			<%= render @microposts %>
+		</ol>
+		<%= will_paginate @microposts %>
+	<% end %>
+</div>
